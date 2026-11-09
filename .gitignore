@@ -1,0 +1,40 @@
+# Java / Spring Boot / Maven
+target/
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+.m2/
+.tools/
+
+# Node / React / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and sensitive secrets
+.env
+.env.production
+*.env
+!*.env.example
+
+# IDE & Operating System
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+.DS_Store
+Thumbs.db
