@@ -49,3 +49,4 @@ databases:
     databaseName: moneyme_db
     user: postgres
     plan: free
+

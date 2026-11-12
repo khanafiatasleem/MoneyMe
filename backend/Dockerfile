@@ -31,3 +31,4 @@ EXPOSE 8080
 ENV JAVA_OPTS="-Xms256m -Xmx384m -XX:+UseG1GC"
 
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Dserver.port=${PORT:-8080} -jar app.jar"]
+
