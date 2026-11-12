@@ -1,7 +1,6 @@
+
 services:
-  # ==============================================================================
-  # 1. MoneyMe Backend API (Java 17 / Spring Boot 3 Container)
-  # ==============================================================================
+  # 1. MoneyMe Backend
   - type: web
     name: moneyme-backend
     runtime: docker
@@ -19,9 +18,7 @@ services:
       - key: JWT_EXPIRATION_MS
         value: "86400000"
 
-  # ==============================================================================
-  # 2. MoneyMe Frontend (React 18 / Vite Single Page Application)
-  # ==============================================================================
+  # 2. MoneyMe Frontend
   - type: web
     name: moneyme-frontend
     runtime: static
@@ -29,20 +26,17 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     plan: free
+    envVars:
+      - key: VITE_API_URL
+        value: https://moneyme-backend.onrender.com/api
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
-        envVars:
-      - key: VITE_API_URL
-        value: https://moneyme-backend.onrender.com/api
 
-# ==============================================================================
-# 3. Managed PostgreSQL Database
-# ==============================================================================
+# 3. PostgreSQL Database
 databases:
   - name: moneyme-db
     databaseName: moneyme_db
     user: postgres
     plan: free
-
