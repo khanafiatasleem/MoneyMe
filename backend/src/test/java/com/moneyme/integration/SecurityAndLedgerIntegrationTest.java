@@ -24,6 +24,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -111,15 +112,20 @@ public class SecurityAndLedgerIntegrationTest {
         assertEquals(new BigDecimal("150.0000"), totalCredits);
         assertEquals(totalDebits, totalCredits, "Double entry balance invariant violated: Sum(Debits) != Sum(Credits)");
 
-        // 7. Security: Verify USER cannot access ADMIN endpoint
+        // 7. Verify Transaction History includes both Deposits (null source) and Transfers
+        List<TransactionResponse> charlieHistory = transactionService.getUserTransactions(userAuth.getUserId(), null);
+        assertEquals(2, charlieHistory.size(), "Charlie's history must show both the opening deposit and the transfer");
+        assertTrue(charlieHistory.stream().anyMatch(t -> t.getType().equals("DEPOSIT")));
+        assertTrue(charlieHistory.stream().anyMatch(t -> t.getType().equals("TRANSFER")));
+
+        // 8. Security: Verify USER cannot access ADMIN endpoint
         mockMvc.perform(get("/api/admin/dashboard")
                         .header("Authorization", "Bearer " + userAuth.getToken()))
                 .andExpect(status().isForbidden());
 
-        // 8. Security: Verify ADMIN CAN access ADMIN endpoint
+        // 9. Security: Verify ADMIN CAN access ADMIN endpoint
         mockMvc.perform(get("/api/admin/dashboard")
                         .header("Authorization", "Bearer " + adminAuth.getToken()))
                 .andExpect(status().isOk());
     }
 }
-

@@ -18,19 +18,24 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     Optional<Transaction> findByIdempotencyKey(String idempotencyKey);
 
     @Query("SELECT t FROM Transaction t " +
-           "WHERE (t.sourceAccount.user.id = :userId OR t.destinationAccount.user.id = :userId) " +
+           "LEFT JOIN t.sourceAccount sa " +
+           "LEFT JOIN t.destinationAccount da " +
+           "WHERE (sa.user.id = :userId OR da.user.id = :userId) " +
            "ORDER BY t.createdAt DESC")
     List<Transaction> findAllByUserId(@Param("userId") Long userId);
 
     @Query("SELECT t FROM Transaction t " +
-           "WHERE (t.sourceAccount.user.id = :userId OR t.destinationAccount.user.id = :userId) " +
+           "LEFT JOIN t.sourceAccount sa " +
+           "LEFT JOIN t.destinationAccount da " +
+           "WHERE (sa.user.id = :userId OR da.user.id = :userId) " +
            "AND (:type IS NULL OR t.type = :type) " +
            "ORDER BY t.createdAt DESC")
     List<Transaction> findAllByUserIdAndType(@Param("userId") Long userId, @Param("type") TransactionType type);
 
     @Query("SELECT t FROM Transaction t " +
-           "WHERE t.sourceAccount.id = :accountId OR t.destinationAccount.id = :accountId " +
+           "LEFT JOIN t.sourceAccount sa " +
+           "LEFT JOIN t.destinationAccount da " +
+           "WHERE (sa.id = :accountId OR da.id = :accountId) " +
            "ORDER BY t.createdAt DESC")
     List<Transaction> findAllByAccountId(@Param("accountId") Long accountId);
 }
-
