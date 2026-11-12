@@ -33,8 +33,9 @@ services:
       - type: rewrite
         source: /*
         destination: /index.html
-    envVars:
+        envVars:
       - key: VITE_API_URL
+        value: https://moneyme-backend.onrender.com/api
         fromService:
           type: web
           name: moneyme-backend
