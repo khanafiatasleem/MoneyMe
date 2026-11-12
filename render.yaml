@@ -32,13 +32,13 @@ services:
         value: "86400000"
 
   # Frontend React SPA (Vite Static Site)
+  # Note: Static sites in Render do not have a plan field because they are hosted on the CDN.
   - type: web
     name: moneyme-frontend
     runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
-    plan: free
     routes:
       - type: rewrite
         source: /*
