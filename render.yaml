@@ -36,11 +36,6 @@ services:
         envVars:
       - key: VITE_API_URL
         value: https://moneyme-backend.onrender.com/api
-        fromService:
-          type: web
-          name: moneyme-backend
-          property: host
-          value: https://moneyme-backend.onrender.com/api
 
 # ==============================================================================
 # 3. Managed PostgreSQL Database
