@@ -52,7 +52,9 @@ button {
   background: none;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: 0.95rem;
 }
@@ -261,10 +263,25 @@ input, select, textarea {
   flex-shrink: 0;
 }
 
-.stat-icon.primary { background: #dbeafe; color: #2563eb; }
-.stat-icon.success { background: #d1fae5; color: #059669; }
-.stat-icon.danger { background: #fee2e2; color: #dc2626; }
-.stat-icon.warning { background: #fef3c7; color: #d97706; }
+.stat-icon.primary {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.stat-icon.success {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.stat-icon.danger {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.stat-icon.warning {
+  background: #fef3c7;
+  color: #d97706;
+}
 
 .stat-label {
   font-size: 0.85rem;
@@ -297,6 +314,7 @@ input, select, textarea {
   background-color: var(--primary);
   color: white;
 }
+
 .btn-primary:hover:not(:disabled) {
   background-color: var(--primary-hover);
 }
@@ -306,6 +324,7 @@ input, select, textarea {
   color: var(--text-main);
   border: 1px solid var(--border);
 }
+
 .btn-secondary:hover:not(:disabled) {
   background-color: #f1f5f9;
 }
@@ -314,6 +333,7 @@ input, select, textarea {
   background-color: var(--danger);
   color: white;
 }
+
 .btn-danger:hover:not(:disabled) {
   background-color: #dc2626;
 }
@@ -336,7 +356,8 @@ input, select, textarea {
   margin-bottom: 6px;
 }
 
-.form-input, .form-select {
+.form-input,
+.form-select {
   width: 100%;
   padding: 10px 14px;
   border: 1px solid var(--border);
@@ -347,7 +368,8 @@ input, select, textarea {
   transition: border-color 0.15s;
 }
 
-.form-input:focus, .form-select:focus {
+.form-input:focus,
+.form-select:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
@@ -407,10 +429,25 @@ input, select, textarea {
   font-weight: 600;
 }
 
-.badge-success { background: var(--success-bg); color: #059669; }
-.badge-danger { background: var(--danger-bg); color: #dc2626; }
-.badge-warning { background: #fffbeb; color: #d97706; }
-.badge-info { background: var(--primary-light); color: var(--primary); }
+.badge-success {
+  background: var(--success-bg);
+  color: #059669;
+}
+
+.badge-danger {
+  background: var(--danger-bg);
+  color: #dc2626;
+}
+
+.badge-warning {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.badge-info {
+  background: var(--primary-light);
+  color: var(--primary);
+}
 
 /* Alerts */
 .alert {

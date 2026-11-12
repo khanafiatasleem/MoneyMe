@@ -129,3 +129,4 @@ export const AccountDetailsPage = () => {
     </div>
   );
 };
+

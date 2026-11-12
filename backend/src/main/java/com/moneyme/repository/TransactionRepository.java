@@ -33,3 +33,4 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
            "ORDER BY t.createdAt DESC")
     List<Transaction> findAllByAccountId(@Param("accountId") Long accountId);
 }
+

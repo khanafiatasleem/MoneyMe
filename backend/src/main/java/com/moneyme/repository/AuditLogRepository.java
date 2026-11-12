@@ -11,3 +11,4 @@ public interface AuditLogRepository extends JpaRepository<AuditLog, Long> {
     List<AuditLog> findByActorUserIdOrderByCreatedAtDesc(Long actorUserId);
     List<AuditLog> findAllByOrderByCreatedAtDesc();
 }
+

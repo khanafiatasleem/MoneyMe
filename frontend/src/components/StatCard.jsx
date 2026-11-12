@@ -14,3 +14,4 @@ export const StatCard = ({ title, value, icon: Icon, variant = 'primary', subtit
     </div>
   );
 };
+

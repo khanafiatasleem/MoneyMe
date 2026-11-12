@@ -20,3 +20,4 @@ public interface LedgerEntryRepository extends JpaRepository<LedgerEntry, Long> 
            "FROM LedgerEntry l WHERE l.account.id = :accountId")
     BigDecimal calculateReconciledBalance(@Param("accountId") Long accountId);
 }
+

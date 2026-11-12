@@ -253,3 +253,4 @@ All 17 integration and unit tests will run automatically using the isolated test
 - **Multi-Currency FX Rates:** Current transfers support matching currency accounts; automated currency exchange conversion can be integrated via open exchange rate APIs.
 - **Biometric 2FA:** Can be extended with TOTP/Google Authenticator multi-factor authentication.
 - **Scheduled Recurring Payments:** Scheduled batch transfers via Spring `@Scheduled` or Quartz.
+

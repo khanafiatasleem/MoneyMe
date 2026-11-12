@@ -12,3 +12,4 @@ public interface IdempotencyRepository extends JpaRepository<IdempotencyRecord, 
     Optional<IdempotencyRecord> findByKeyValue(String keyValue);
     void deleteByExpiresAtBefore(LocalDateTime dateTime);
 }
+

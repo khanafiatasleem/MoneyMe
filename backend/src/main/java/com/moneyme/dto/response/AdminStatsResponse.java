@@ -73,3 +73,4 @@ public class AdminStatsResponse {
         this.users = users;
     }
 }
+

@@ -42,3 +42,4 @@ export const ConfirmModal = ({ isOpen, title, message, onConfirm, onCancel, conf
     </div>
   );
 };
+

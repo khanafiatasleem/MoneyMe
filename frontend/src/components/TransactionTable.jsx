@@ -98,3 +98,4 @@ export const TransactionTable = ({ transactions = [], emptyMessage = "No transac
     </div>
   );
 };
+

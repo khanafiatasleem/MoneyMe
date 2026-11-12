@@ -5,3 +5,4 @@ public class DuplicateIdempotencyException extends RuntimeException {
         super(message);
     }
 }
+

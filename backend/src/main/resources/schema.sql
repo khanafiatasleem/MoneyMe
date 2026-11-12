@@ -99,3 +99,4 @@ CREATE TABLE IF NOT EXISTS audit_logs (
 
 CREATE INDEX IF NOT EXISTS idx_audit_actor ON audit_logs(actor_user_id);
 CREATE INDEX IF NOT EXISTS idx_audit_created ON audit_logs(created_at);
+

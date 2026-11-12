@@ -185,3 +185,4 @@ class TransactionServiceTest {
         assertThrows(InsufficientBalanceException.class, () -> transactionService.transfer(1L, request, null));
     }
 }
+

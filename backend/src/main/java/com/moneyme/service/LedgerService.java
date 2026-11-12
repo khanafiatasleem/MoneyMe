@@ -62,3 +62,4 @@ public class LedgerService {
         return ledgerEntryRepository.calculateReconciledBalance(accountId);
     }
 }
+

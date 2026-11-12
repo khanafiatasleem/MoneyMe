@@ -104,3 +104,4 @@ class AuthServiceTest {
         assertThrows(BadCredentialsException.class, () -> authService.login(request));
     }
 }
+
