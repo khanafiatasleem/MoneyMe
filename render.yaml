@@ -6,7 +6,6 @@ version: "1"
 databases:
   - name: moneyme-db
     databaseName: moneyme_db
-    user: postgres
     plan: free
 
 # ==============================================================================
